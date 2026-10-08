@@ -1,0 +1,99 @@
+{
+  "note": "SYNTHETIC ONLY: not HMOG, not manuscript figures/tables, fixed sum baseline is NOT [24] or [25].",
+  "configuration": {
+    "seeds": [
+      7,
+      21,
+      42
+    ],
+    "samples_per_seed": 400,
+    "fusion_learning_samples": 200,
+    "fusion_evaluation_samples": 200,
+    "modalities": 2,
+    "swarm_size": 20,
+    "iterations": 15
+  },
+  "runs": [
+    {
+      "seed": 7,
+      "cfa": 0.5,
+      "selected_rule": "product",
+      "threshold": 0.432802,
+      "optimized_e": 0.170969,
+      "fixed_sum_e": 0.160947,
+      "delta_baseline_minus_optimized": -0.010021
+    },
+    {
+      "seed": 7,
+      "cfa": 1,
+      "selected_rule": "product",
+      "threshold": 0.462217,
+      "optimized_e": 0.204677,
+      "fixed_sum_e": 0.159733,
+      "delta_baseline_minus_optimized": -0.044944
+    },
+    {
+      "seed": 7,
+      "cfa": 1.5,
+      "selected_rule": "exp",
+      "threshold": 1.767841,
+      "optimized_e": 0.221581,
+      "fixed_sum_e": 0.158518,
+      "delta_baseline_minus_optimized": -0.063063
+    },
+    {
+      "seed": 21,
+      "cfa": 0.5,
+      "selected_rule": "exp",
+      "threshold": 1.69177,
+      "optimized_e": 0.286058,
+      "fixed_sum_e": 0.264423,
+      "delta_baseline_minus_optimized": -0.021635
+    },
+    {
+      "seed": 21,
+      "cfa": 1,
+      "selected_rule": "exp",
+      "threshold": 1.717745,
+      "optimized_e": 0.262821,
+      "fixed_sum_e": 0.278846,
+      "delta_baseline_minus_optimized": 0.016026
+    },
+    {
+      "seed": 21,
+      "cfa": 1.5,
+      "selected_rule": "hamacher",
+      "threshold": 0.367968,
+      "optimized_e": 0.240385,
+      "fixed_sum_e": 0.293269,
+      "delta_baseline_minus_optimized": 0.052885
+    },
+    {
+      "seed": 42,
+      "cfa": 0.5,
+      "selected_rule": "exp",
+      "threshold": 1.592473,
+      "optimized_e": 0.247965,
+      "fixed_sum_e": 0.217365,
+      "delta_baseline_minus_optimized": -0.0306
+    },
+    {
+      "seed": 42,
+      "cfa": 1,
+      "selected_rule": "sum",
+      "threshold": 0.479571,
+      "optimized_e": 0.247714,
+      "fixed_sum_e": 0.219676,
+      "delta_baseline_minus_optimized": -0.028037
+    },
+    {
+      "seed": 42,
+      "cfa": 1.5,
+      "selected_rule": "sum",
+      "threshold": 0.579735,
+      "optimized_e": 0.17762,
+      "fixed_sum_e": 0.221988,
+      "delta_baseline_minus_optimized": 0.044367
+    }
+  ]
+}
