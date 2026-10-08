@@ -1,0 +1,166 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 2 /Kids [5 0 R 7 0 R] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 3545 >>
+stream
+0.10 0.20 0.34 rg 0 790 595 52 re f
+BT /F1 17 Tf 1 1 1 rg 1 0 0 1 35 812 Tm (APSO MULTIMODAL BIOMETRIC AUTHENTICATION) Tj ET
+BT /F1 12 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 771 Tm (Software Validation and Benchmark Report) Tj ET
+0.75 0.83 0.90 RG 0.6 w 38 754 m 555 754 l S
+BT /F1 14 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 726 Tm (1. Automated Tests) Tj ET
+BT /F1 11 Tf 0.10 0.20 0.30 rg 1 0 0 1 40 703 Tm (Result: 5 passed, 0 failed \(local test suite\).) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 40 682 Tm (Components: fusion, error metrics, optimization, bootstrap, SVM.) Tj ET
+BT /F1 14 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 644 Tm (2. Benchmark Configuration) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 42 621 Tm (Data: generated score pairs, NOT original HMOG recordings.) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 42 600 Tm (Three seeds: 7, 21, 42; 400 attempts for each seed.) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 42 579 Tm (Two modalities; 200 fusion-learning and 200 held-out attempts.) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 42 558 Tm (Optimizer: swarm size 20, 15 iterations; CFA levels 0.5, 1.0, 1.5.) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 42 537 Tm (Comparator: fixed unweighted sum, 0.5 acceptance threshold.) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 42 516 Tm (This comparator is NOT the published methods [24] or [25].) Tj ET
+BT /F1 14 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 468 Tm (3. Mean Held-out Global Error) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 42 437 Tm (CFA) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 128 437 Tm (Optimized fusion) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 299 437 Tm (Fixed-sum baseline) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 461 437 Tm (Difference) Tj ET
+0.75 0.83 0.90 RG 0.6 w 38 428 m 555 428 l S
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 42 404 Tm (0.5) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 128 404 Tm (0.2350) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 299 404 Tm (0.2142) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 461 404 Tm (+0.0208) Tj ET
+0.75 0.83 0.90 RG 0.6 w 38 393 m 555 393 l S
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 42 372 Tm (1.0) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 128 372 Tm (0.2384) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 299 372 Tm (0.2194) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 461 372 Tm (+0.0190) Tj ET
+0.75 0.83 0.90 RG 0.6 w 38 361 m 555 361 l S
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 42 340 Tm (1.5) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 128 340 Tm (0.2132) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 299 340 Tm (0.2246) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 461 340 Tm (-0.0114) Tj ET
+0.75 0.83 0.90 RG 0.6 w 38 329 m 555 329 l S
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 278 Tm (Lower weighted global error is better. Optimization reduced cost for) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 261 Tm (CFA = 1.5 but not for CFA = 0.5 or 1.0 in these generated-data runs.) Tj ET
+BT /F1 14 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 212 Tm (4. Interpretation) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 40 190 Tm (Software tests passed; benchmark results vary with the security coefficient.) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 40 173 Tm (The example outputs do not establish published HMOG performance.) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 100 Tm (Run: python -m pytest -q) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 84 Tm (Run: python experiments/benchmark.py) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 68 Tm (Full numeric outputs: reports/benchmark_results.json) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 5426 >>
+stream
+0.10 0.20 0.34 rg 0 790 595 52 re f
+BT /F1 17 Tf 1 1 1 rg 1 0 0 1 38 812 Tm (RUN-LEVEL BENCHMARK OUTPUTS) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 760 Tm (Seed) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 100 760 Tm (CFA) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 165 760 Tm (Rule) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 285 760 Tm (Threshold) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 399 760 Tm (Optimized E) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 487 760 Tm (Fixed E) Tj ET
+0.75 0.83 0.90 RG 0.6 w 38 750 m 555 750 l S
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 725 Tm (7) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 100 725 Tm (0.5) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 165 725 Tm (product) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 285 725 Tm (0.4328) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 399 725 Tm (0.1710) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 487 725 Tm (0.1609) Tj ET
+0.75 0.83 0.90 RG 0.6 w 38 713 m 555 713 l S
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 691 Tm (7) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 100 691 Tm (1.0) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 165 691 Tm (product) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 285 691 Tm (0.4622) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 399 691 Tm (0.2047) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 487 691 Tm (0.1597) Tj ET
+0.75 0.83 0.90 RG 0.6 w 38 679 m 555 679 l S
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 657 Tm (7) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 100 657 Tm (1.5) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 165 657 Tm (exp) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 285 657 Tm (1.7678) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 399 657 Tm (0.2216) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 487 657 Tm (0.1585) Tj ET
+0.75 0.83 0.90 RG 0.6 w 38 645 m 555 645 l S
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 623 Tm (21) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 100 623 Tm (0.5) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 165 623 Tm (exp) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 285 623 Tm (1.6918) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 399 623 Tm (0.2861) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 487 623 Tm (0.2644) Tj ET
+0.75 0.83 0.90 RG 0.6 w 38 611 m 555 611 l S
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 589 Tm (21) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 100 589 Tm (1.0) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 165 589 Tm (exp) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 285 589 Tm (1.7177) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 399 589 Tm (0.2628) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 487 589 Tm (0.2788) Tj ET
+0.75 0.83 0.90 RG 0.6 w 38 577 m 555 577 l S
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 555 Tm (21) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 100 555 Tm (1.5) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 165 555 Tm (hamacher) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 285 555 Tm (0.3680) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 399 555 Tm (0.2404) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 487 555 Tm (0.2933) Tj ET
+0.75 0.83 0.90 RG 0.6 w 38 543 m 555 543 l S
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 521 Tm (42) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 100 521 Tm (0.5) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 165 521 Tm (exp) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 285 521 Tm (1.5925) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 399 521 Tm (0.2480) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 487 521 Tm (0.2174) Tj ET
+0.75 0.83 0.90 RG 0.6 w 38 509 m 555 509 l S
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 487 Tm (42) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 100 487 Tm (1.0) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 165 487 Tm (sum) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 285 487 Tm (0.4796) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 399 487 Tm (0.2477) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 487 487 Tm (0.2197) Tj ET
+0.75 0.83 0.90 RG 0.6 w 38 475 m 555 475 l S
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 453 Tm (42) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 100 453 Tm (1.5) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 165 453 Tm (sum) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 285 453 Tm (0.5797) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 399 453 Tm (0.1776) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 487 453 Tm (0.2220) Tj ET
+0.75 0.83 0.90 RG 0.6 w 38 441 m 555 441 l S
+BT /F1 14 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 360 Tm (5. SVM Checkpoints) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 40 338 Tm (Included models: touch_svm.json \(3 features\), motion_svm.json \(4 features\).) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 40 317 Tm (Model type: linear SVC with calibrated probability estimates.) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 40 296 Tm (Training source: generated example feature data; NOT HMOG.) Tj ET
+BT /F1 14 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 257 Tm (6. Reading the Results) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 40 234 Tm (APSO and fixed-sum values are evaluated on the same synthetic holdout.) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 40 215 Tm (These results are descriptive and do not test statistical significance.) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 40 196 Tm (For manuscript replication, execute on real study features and partitions.) Tj ET
+BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 110 Tm (Related files:) Tj ET
+BT /F1 9 Tf 0.10 0.20 0.30 rg 1 0 0 1 40 88 Tm (experiments/benchmark.py   models/   reports/benchmark_results.json) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000191 00000 n 
+0000003787 00000 n 
+0000003913 00000 n 
+0000009390 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+9516
+%%EOF

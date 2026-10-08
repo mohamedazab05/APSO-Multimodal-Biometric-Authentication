@@ -1,0 +1,36 @@
+{
+  "modality": "touch",
+  "model_type": "SVC linear kernel with Platt scaling",
+  "training_source": "generated example features (NOT HMOG)",
+  "seed": 2026,
+  "features": 3,
+  "mean": [
+    0.6020375029027037,
+    0.5559171950239408,
+    0.6841994330200322
+  ],
+  "scale": [
+    0.5793482002185933,
+    0.6375759733232559,
+    0.6846490221136186
+  ],
+  "linear_coef": [
+    0.567189089672809,
+    0.40141674798638366,
+    0.9753585715002961
+  ],
+  "intercept": [
+    0.05036838211424871
+  ],
+  "probA": [
+    -0.8505889134210404
+  ],
+  "probB": [
+    -0.05373047063196027
+  ],
+  "classes": [
+    0,
+    1
+  ],
+  "n_training_samples": 80
+}

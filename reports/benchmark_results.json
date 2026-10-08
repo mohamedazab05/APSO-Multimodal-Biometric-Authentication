@@ -1,5 +1,4 @@
 {
-  "note": "SYNTHETIC ONLY: not HMOG, not manuscript figures/tables, fixed sum baseline is NOT [24] or [25].",
   "configuration": {
     "seeds": [
       7,
@@ -95,5 +94,7 @@
       "fixed_sum_e": 0.221988,
       "delta_baseline_minus_optimized": 0.044367
     }
-  ]
+  ],
+  "data_source": "generated synthetic scores (NOT HMOG)",
+  "note": "Baseline is simple fixed unweighted sum; it is NOT references [24] or [25]."
 }
