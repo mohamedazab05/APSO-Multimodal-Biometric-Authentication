@@ -131,5 +131,3 @@ print(model.rule, model.threshold, held_out_error)
 ## Dataset and experimental implementation
 
 The original study uses the publicly available HMOG behavioral biometric dataset. The SVM interface in this project takes pre-extracted numerical touch and motion features. To reproduce the reported study, supply original feature extraction and partition settings, calibrate score distributions, use independent training/fusion/evaluation partitions, and rerun the claimed benchmarks on those real data.
-
-The author has reported that a run of the implementation matched the experimental results. Input records, run logs, and the original HMOG evaluation outputs have not been supplied to this repository for independent comparison. The code is available and testable; exact reproduction of the paper's published numbers is a separate evaluation step.
