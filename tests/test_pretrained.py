@@ -1,4 +1,4 @@
-"""Validate saved example SVM checkpoints and their probability output."""
+
 from pathlib import Path
 import numpy as np
 from apso_auth.pretrained import predict_probability
