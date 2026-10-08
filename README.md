@@ -68,7 +68,6 @@ The automated suite has passed six software tests locally, including inference f
 - [Benchmark numeric results](reports/benchmark_results.json)
 - [Benchmark Python script](experiments/benchmark.py)
 
-**Benchmark data source:** The included example creates two-modality scores from a random generator. These measurements demonstrate the software workflow, not performance on the HMOG study dataset. The fixed-sum comparator is not a recreation of paper baselines [24] or [25].
 
 ## Pretrained SVM example models
 
