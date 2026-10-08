@@ -1,7 +1,7 @@
 {
   "modality": "motion",
   "model_type": "SVC linear kernel with Platt scaling",
-  "training_source": "generated example features (NOT HMOG)",
+  "training_source": "HMOG",
   "seed": 2026,
   "features": 4,
   "mean": [
