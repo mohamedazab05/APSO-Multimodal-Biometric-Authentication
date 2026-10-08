@@ -106,6 +106,23 @@ E = CFA × FAR + (2 − CFA) × FRR
 
 where `FAR` denotes false acceptance rate, `FRR` false rejection rate, and `CFA` is a scenario-dependent cost coefficient between **0 and 2**. The paper evaluates **21 values from 0 to 2 in increments of 0.1**. The context-to-`CFA` mapping is outside the current implementation.
 
+## Automated tests and synthetic benchmark report
+
+The local Python test suite passed **5 tests** (0 failures). An additional reproducible benchmark evaluated three random seeds at CFA = 0.5, 1.0, and 1.5, using generated, two-modality score arrays with disjoint fusion-learning and held-out evaluation partitions.
+
+- [PDF benchmark report](reports/APSO_Synthetic_Test_Report.pdf)
+- [Machine-readable benchmark results](reports/synthetic_benchmark_results.json)
+- [Python benchmark script](experiments/synthetic_benchmark.py)
+
+Run the benchmark after installation:
+
+```bash
+python -m pytest -q
+python experiments/synthetic_benchmark.py
+```
+
+The benchmark compares the APSO-selected fusion procedure with an **unweighted sum and fixed decision threshold**, not published baselines [24] or [25]. In these synthetic runs the APSO-selected procedure did **not** win consistently. Its performance was better only for CFA = 1.5 on average. These outputs are neither HMOG experiments nor manuscript reproduction evidence.
+
 ## Reproducing research experiments
 
 A credible replication requires more than running the demo:
