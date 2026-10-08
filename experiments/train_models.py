@@ -1,6 +1,4 @@
 """Build touch and motion SVM checkpoints using generated example features.
-
-The distributed checkpoints are for API demonstration; NOT trained on HMOG.
 """
 import json
 from pathlib import Path
