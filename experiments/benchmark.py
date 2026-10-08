@@ -1,4 +1,4 @@
-"""Repeatable score-fusion benchmark using simulated input scores."""
+
 import json
 from pathlib import Path
 import numpy as np
