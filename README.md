@@ -1,51 +1,52 @@
 # APSO Multimodal Biometric Authentication
 
-**Research implementation accompanying** *A Dynamic Optimization Model for Multimodal Biometric Authentication*.
+Python implementation for the research work **A Dynamic Optimization Model for Multimodal Biometric Authentication**.
 
-This Python package provides a modular implementation of an adaptive-particle-swarm-optimization (APSO) approach to multimodal biometric **score-level fusion**. It supports separate unimodal SVM score generation, fusion strategy selection, context-dependent error costs, and paired user-level bootstrap analysis.
-
-> **Reproducibility status (October 2026):** The research author reports obtaining results matching their experiments using the sample implementation. This report is encouraging, but the specific input data, evaluation protocol, numerical comparisons, and run artifacts have **not yet been independently inspected or verified in this repository**. The included demo generates synthetic data and is **not evidence of reproducing the paper's published tables or figures**.
+The repository contains an adaptive particle swarm optimization (APSO) approach to multimodal score-level biometric fusion, SVM authentication, held-out evaluation, and statistical utilities.
 
 ## Features
 
-| Module | Capabilities |
-| --- | --- |
-| Fusion | Nine families: weighted sum, weighted product, exponential, hyperbolic tangent, Einstein, Hamacher, Schweizer–Sklar, Frank and Yager |
-| Optimizer | APSO-inspired swarm optimization, diversity adaptation, elitist perturbation, fusion-rule selection and threshold selection |
-| Classifiers | SVM-based modality-specific authentication from pre-extracted, aligned feature arrays |
-| Metrics | FAR, FRR and context-weighted global error |
-| Evaluation | Separate fusion training and held-out evaluation |
-| Statistics | Paired, user-cluster bootstrap intervals for differences between systems |
-| Verification | Automated tests and a small synthetic demonstration |
+- Nine score-level fusion rules: sum, product, exponential, hyperbolic tangent, Einstein, Hamacher, Schweizer–Sklar, Frank, and Yager.
+- APSO-inspired optimizer with fusion-rule selection and configurable decision threshold.
+- Modality-specific SVM training and probability scoring.
+- Saved touch and motion SVM example checkpoints and a portable prediction loader.
+- FAR, FRR and context-weighted error computation.
+- Held-out experiments and paired user-level bootstrap confidence intervals.
+- Automated tests, numerical benchmark outputs, and an experimental PDF report.
 
-## Repository layout
+## Project files
 
 ```text
-.
+APSO-Multimodal-Biometric-Authentication/
 ├── README.md
 ├── pyproject.toml
-├── .gitignore
-├── data/
-│   └── .gitkeep
-├── src/
-│   └── apso_auth/
-│       ├── __init__.py       # package interface
-│       ├── fusion.py         # nine score-fusion functions
-│       ├── optimizer.py      # APSO-inspired optimization
-│       ├── metrics.py        # FAR, FRR, weighted error
-│       ├── svm.py            # modality SVM training/scoring
-│       ├── evaluation.py     # holdout evaluation / user bootstrap
-│       └── demo.py           # synthetic example
-└── tests/
-    ├── test_core.py         # fusion, optimizer and bootstrap tests
-    └── test_svm.py          # SVM scoring test
+├── src/apso_auth/
+│   ├── __init__.py
+│   ├── fusion.py
+│   ├── optimizer.py
+│   ├── metrics.py
+│   ├── svm.py
+│   ├── pretrained.py
+│   ├── evaluation.py
+│   └── demo.py
+├── experiments/
+│   ├── benchmark.py
+│   └── train_models.py
+├── models/
+│   ├── touch_svm.json
+│   └── motion_svm.json
+├── reports/
+│   ├── APSO_Test_Report.pdf
+│   └── benchmark_results.json
+├── tests/
+│   ├── test_core.py
+│   └── test_svm.py
+└── .github/workflows/tests.yml
 ```
-
-**All Python source files and tests shown above are committed in the repository.**
 
 ## Installation
 
-Requires **Python 3.10 or newer**.
+Python 3.10 or later:
 
 ```bash
 git clone https://github.com/mohamedazab05/APSO-Multimodal-Biometric-Authentication.git
@@ -53,110 +54,82 @@ cd APSO-Multimodal-Biometric-Authentication
 python -m pip install -e ".[dev]"
 ```
 
-Run the automated tests:
+## Run tests and experiments
 
 ```bash
 python -m pytest -q
-```
-
-Run the **synthetic** demonstration:
-
-```bash
 apso-demo
+python experiments/benchmark.py
 ```
 
-The demo prints selected fusion rules, decision thresholds and held-out costs for three example security coefficients. **It does not use the research dataset.**
+The automated suite has passed five software tests locally.
 
-## Quick example
+- [Benchmark PDF report](reports/APSO_Test_Report.pdf)
+- [Benchmark numeric results](reports/benchmark_results.json)
+- [Benchmark Python script](experiments/benchmark.py)
+
+**Benchmark data source:** The included example creates two-modality scores from a random generator. These measurements demonstrate the software workflow, not performance on the HMOG study dataset. The fixed-sum comparator is not a recreation of paper baselines [24] or [25].
+
+## Pretrained SVM example models
+
+The `models/` directory contains two **trained SVM example checkpoints** in JSON format:
+
+| Model | Input feature count | Training source |
+| --- | ---: | --- |
+| `touch_svm.json` | 3 | Generated example features |
+| `motion_svm.json` | 4 | Generated example features |
+
+These models are genuinely fitted linear-kernel support vector classifiers with stored normalization, separating-hyperplane coefficients, and Platt calibration parameters. The portable loader approximates scikit-learn's calibrated probabilities; for exact full-library model serialization use the original trained `sklearn` pipeline and `joblib`. **Neither supplied checkpoint was trained on HMOG.**
+
+Example inference:
 
 ```python
 import numpy as np
-from apso_auth.evaluation import train_and_evaluate
+from apso_auth.pretrained import predict_probability
 
-# Example only: scores from TWO pre-trained, calibrated modality models.
-# Rows: evaluation attempts; columns: modalities.
-learning_scores = np.array([
-    [0.1, 0.2], [0.8, 0.9], [0.2, 0.3],
-    [0.7, 0.8], [0.3, 0.2], [0.9, 0.7]
-])
-learning_labels = np.array([0, 1, 0, 1, 0, 1])
-
-heldout_scores = np.array([
-    [0.2, 0.1], [0.7, 0.9], [0.3, 0.4], [0.9, 0.8]
-])
-heldout_labels = np.array([0, 1, 0, 1])
-
-result, heldout_error = train_and_evaluate(
-    learning_scores, learning_labels,
-    heldout_scores, heldout_labels,
-    cfa=1.0, swarm_size=20, iterations=15, seed=42
-)
-print(result.rule, result.threshold, heldout_error)
+touch_features = np.array([[0.3, 0.4, 0.5], [0.6, 0.7, 0.8]])
+touch_probabilities = predict_probability(touch_features, "models/touch_svm.json")
+print(touch_probabilities)
 ```
 
-For the reported manuscript configuration, specify `swarm_size=100` and `iterations=100`. Results will still depend on the actual feature extraction, data split, parameterization, input scores and random seed.
+To retrain the included example models using deterministic generated input features:
 
-## Objective and security levels
+```bash
+python experiments/train_models.py
+```
 
-The optimization minimizes the cost-weighted global error:
+For project-specific physiological or behavioral biometric features, retrain the per-modality SVMs on the actual study training set.
+
+## Optimization objective
+
+The context-weighted global error is
 
 ```text
 E = CFA × FAR + (2 − CFA) × FRR
 ```
 
-where `FAR` denotes false acceptance rate, `FRR` false rejection rate, and `CFA` is a scenario-dependent cost coefficient between **0 and 2**. The paper evaluates **21 values from 0 to 2 in increments of 0.1**. The context-to-`CFA` mapping is outside the current implementation.
+where `CFA` controls the relative cost of false acceptance and false rejection. The manuscript investigates 21 security levels from 0 to 2.
 
-## Automated tests and synthetic benchmark report
+Example:
 
-The local Python test suite passed **5 tests** (0 failures). An additional reproducible benchmark evaluated three random seeds at CFA = 0.5, 1.0, and 1.5, using generated, two-modality score arrays with disjoint fusion-learning and held-out evaluation partitions.
+```python
+import numpy as np
+from apso_auth.evaluation import train_and_evaluate
 
-- [PDF benchmark report](reports/APSO_Synthetic_Test_Report.pdf)
-- [Machine-readable benchmark results](reports/synthetic_benchmark_results.json)
-- [Python benchmark script](experiments/synthetic_benchmark.py)
+learning = np.array([[0.1, 0.2], [0.8, 0.9], [0.2, 0.3], [0.7, 0.8]])
+y_learning = np.array([0, 1, 0, 1])
+evaluation = np.array([[0.15, 0.25], [0.85, 0.75], [0.3, 0.2], [0.9, 0.8]])
+y_evaluation = np.array([0, 1, 0, 1])
 
-Run the benchmark after installation:
-
-```bash
-python -m pytest -q
-python experiments/synthetic_benchmark.py
+model, held_out_error = train_and_evaluate(
+    learning, y_learning, evaluation, y_evaluation,
+    cfa=1.0, swarm_size=100, iterations=100, seed=42
+)
+print(model.rule, model.threshold, held_out_error)
 ```
 
-The benchmark compares the APSO-selected fusion procedure with an **unweighted sum and fixed decision threshold**, not published baselines [24] or [25]. In these synthetic runs the APSO-selected procedure did **not** win consistently. Its performance was better only for CFA = 1.5 on average. These outputs are neither HMOG experiments nor manuscript reproduction evidence.
+## Dataset and experimental implementation
 
-## Reproducing research experiments
+The original study uses the publicly available HMOG behavioral biometric dataset. The SVM interface in this project takes pre-extracted numerical touch and motion features. To reproduce the reported study, supply original feature extraction and partition settings, calibrate score distributions, use independent training/fusion/evaluation partitions, and rerun the claimed benchmarks on those real data.
 
-A credible replication requires more than running the demo:
-
-1. Obtain the original **HMOG** behavioral biometric dataset from its authorized public source. Do not commit raw subject recordings to this repository.
-2. Implement and document the original touch/motion feature extraction and alignment; the current SVM interface expects **already extracted numerical features**.
-3. Use disjoint unimodal training, fusion-learning and fusion-evaluation partitions. Verify exact enrollment, session and user-level separation against the actual experimental protocol.
-4. Record the original APSO parameter bounds and update equations, baseline implementations, calibration procedure, random seeds and thresholds.
-5. Evaluate all security levels on held-out data; retain scores/labels/user IDs and save machine-readable outputs for audit.
-6. Compute paired user-level bootstrap confidence intervals on the **actual held-out results** for the same evaluation population and fixed fitted fusion strategies.
-7. Compare resulting plots, numerical tables and timings against the manuscript before labeling a run a verified reproduction.
-
-### Current implementation differences and limitations
-
-- This repository implements an **independent APSO-inspired variant** with diversity adaptation and elitist perturbation. It has not been demonstrated to be algorithmically identical to the authors' original APSO.
-- Fusion parameter ranges and some nonlinear rule forms are implementation choices requiring comparison with the original equations/code.
-- Unimodal models operate on **pre-extracted features**; HMOG preprocessing and feature engineering are not implemented here.
-- The synthetic demo is not an evaluation of HMOG or published experimental outcomes.
-- The reported bootstrap example values discussed during manuscript preparation are **not represented as measurements** in this project.
-
-## Data, code and model availability
-
-**Code:** All current Python source files are publicly available in this repository.
-
-**Dataset:** The underlying behavioral biometric data are not hosted here. Refer to the dataset citation and official distribution instructions in the manuscript.
-
-**Models:** No pretrained study SVM models are currently included.
-
-**License:** No open-source license has yet been selected by the repository owner. Public visibility alone does not grant permission to reuse or redistribute the source.
-
-## Citation
-
-If you use this repository in research, cite the associated paper using its final published bibliographic information. A DOI and publication record should be added here when verified.
-
-## Research integrity
-
-Matching numerical outputs on a reported run is valuable evidence, but **verification requires the data partition, scripts, implementation equivalence, outputs and evaluation protocol to be archived and examined**. Please do not cite synthetic demonstrations or unverified example statistics as empirical findings.
+The author has reported that a run of the implementation matched the experimental results. Input records, run logs, and the original HMOG evaluation outputs have not been supplied to this repository for independent comparison. The code is available and testable; exact reproduction of the paper's published numbers is a separate evaluation step.
