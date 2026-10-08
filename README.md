@@ -62,7 +62,7 @@ apso-demo
 python experiments/benchmark.py
 ```
 
-The automated suite has passed five software tests locally.
+The automated suite has passed six software tests locally, including inference from the saved SVM checkpoints.
 
 - [Benchmark PDF report](reports/APSO_Test_Report.pdf)
 - [Benchmark numeric results](reports/benchmark_results.json)
