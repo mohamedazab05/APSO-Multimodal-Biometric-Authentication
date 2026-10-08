@@ -16,7 +16,7 @@ BT /F1 17 Tf 1 1 1 rg 1 0 0 1 35 812 Tm (APSO MULTIMODAL BIOMETRIC AUTHENTICATIO
 BT /F1 12 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 771 Tm (Software Validation and Benchmark Report) Tj ET
 0.75 0.83 0.90 RG 0.6 w 38 754 m 555 754 l S
 BT /F1 14 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 726 Tm (1. Automated Tests) Tj ET
-BT /F1 11 Tf 0.10 0.20 0.30 rg 1 0 0 1 40 703 Tm (Result: 5 passed, 0 failed \(local test suite\).) Tj ET
+BT /F1 11 Tf 0.10 0.20 0.30 rg 1 0 0 1 40 703 Tm (Result: 6 passed, 0 failed \(local test suite\).) Tj ET
 BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 40 682 Tm (Components: fusion, error metrics, optimization, bootstrap, SVM.) Tj ET
 BT /F1 14 Tf 0.10 0.20 0.30 rg 1 0 0 1 38 644 Tm (2. Benchmark Configuration) Tj ET
 BT /F1 10 Tf 0.10 0.20 0.30 rg 1 0 0 1 42 621 Tm (Data: generated score pairs, NOT original HMOG recordings.) Tj ET
